@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Diecast</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/write.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <div class="logo">
+                <img src="static/images/collectible-dicast.png" alt="">
+        
+            </div>
+             <!-- <nav id="menu"> -->
+                <ul class="nav-links">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">settings</a></li>
+                </ul>
+             <!-- </nav> -->
+            </div>
+        
+            </header>
+    <div class="inner-container">
+            <form id="carForm" class="add-new-car">
+                <div class="car-image form-control">
+                    <div class="display">
+                        <img src="static/images/default.jpg" alt="CS Diescast upload a image of your diecast car">
+                        <label for="carImage">Upload Image</label>
+                        <input type="file" id="carImage" style="display: none" class="select-file" accept=".jpg, .png, .jpeg, .webp">
+                    </div>
+                </div>
+                <div>
+                    <label for="diecastManufacturer">Diecast Manufacturer</label>
+                    <input id="diecastManufacturer" type="diecastManufacturer" type="text" placeholder="Hot Wheels" required>
+                </div>
+                <div>
+                    <label for="price">Diecast Manufacturer</label>
+                    <input id="price" type="price" type="text" placeholder="$30">
+                </div>
+                <div>
+                    <label for="carName">Name of your car</label>
+                    <input id="carName" type="carName" type="text" placeholder="Fairlady Z">
+                </div>
+                <div class="submit-button form-control">
+                    <button type="submit">Add Car</button>
+                </div>
+            </form>
+    </div>
+
+</body>
+</html>
