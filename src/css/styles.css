@@ -92,12 +92,13 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   margin-top: 5rem;
+  height: 0;
 }
 #card-display > .card:last-child, #card-display > .card:nth-child(4) {
   margin-right: 0;
 }
 .card {
-  margin: 2rem 2rem; 
+  margin: 2rem 1.8rem; 
   border-radius: 10px;
   width: 200px;
   height: 350px;
