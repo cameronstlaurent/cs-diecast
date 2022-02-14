@@ -7,7 +7,7 @@ Create an item and upload it to the real time database using the "add product" l
 ### Read
 When you add a new product, the item will be displayed on the index.html page with the data you have inputed inside of a card. 
 ### Update
-Update an item by clicking the edit button on one of the cards and changing the data populated in the form fields.
+Update an item by clicking the edit button on one of the cards and changing the data populated in the form fields. Make sure to update the image while doing so though!
 ### Delete
 Delete an item by clicking the delete button inside the cards. You will be given two options: 
 - Delete
