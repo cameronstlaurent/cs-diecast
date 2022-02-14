@@ -9,7 +9,6 @@ async function pageInit() {
     const carRef = dataRef(db, `cars/${key}`);
     // remove(carRef);
     const deleteItem = document.getElementById("delete");
-
     const exit = document.getElementById("exit");
 
     deleteItem.addEventListener("click", () => {

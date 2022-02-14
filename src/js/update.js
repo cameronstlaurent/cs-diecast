@@ -1,5 +1,5 @@
 import {ref as storageRef, uploadBytes, getDownloadURL} from 'firebase/storage'; 
-import {ref as databaseRef, set, get} from 'firebase/database'
+import {ref as databaseRef, update, set, get} from 'firebase/database'
 import {db, storage } from './libs/firebase/firebaseConfig';
 
 // const key = sessionStorage.getItem('key');
@@ -45,30 +45,31 @@ async function pageInit(){
         document.querySelector('#uploadImage img').src = urlPath;
     }
 
-    function updateCarData(){
-        const dataRef = databaseRef(db, `cars/${key}`);
+    async function updateCarData(){
         const key = sessionStorage.getItem('key');
+        const dataRef = databaseRef(db, `cars/${key}`);
         const car = carForm.elements['carName'].value.trim();
         const price = carForm.elements['price'].value.trim();
         const manufacturer = carForm.elements['diecastManufacturer'].value.trim();
         const file = carForm.elements['carImage'].files[0];
-
+        // const sku = dataRef.sku;
 
 
         if(file.length !== 0){
             const imageRef = storageRef(storage, `cars/${file.name}`);
             //uploading file to the storage bucket
-            const uploadResult =  uploadBytes(imageRef, file);
+            const uploadResult =  await uploadBytes(imageRef, file);
             //url to the image stored in storage bucket
-            const urlPath =  getDownloadURL(imageRef);
+            const urlPath =  await getDownloadURL(imageRef);
             // path on the storage bucket to the image
-            // const storagePath = uploadResult.metadata.fullPath;
+            const storagePath = uploadResult.metadata.fullPath;
+            
 
-            set(dataRef, {
+            update(dataRef, {
                 key,
-                sku,
+                sku:`jhvr${key}`,
                 urlPath,
-                // storagePath,
+                storagePath,
                 car,
                 price, 
                 manufacturer
