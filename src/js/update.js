@@ -41,7 +41,7 @@ async function pageInit(){
     function setFieldValues({car, price, manufacturer, urlPath}){
         carForm.elements['carName'].value = car;
         document.querySelector('#price').value = price;
-        document.querySelector('#carType').value = manufacturer;
+        document.querySelector('#diecastManufacturer').value = manufacturer;
         document.querySelector('#uploadImage img').src = urlPath;
     }
 
@@ -50,7 +50,7 @@ async function pageInit(){
         const key = sessionStorage.getItem('key');
         const car = carForm.elements['carName'].value.trim();
         const price = carForm.elements['price'].value.trim();
-        const manufacturer = carForm.elements['carType'].value.trim();
+        const manufacturer = carForm.elements['diecastManufacturer'].value.trim();
         const file = carForm.elements['carImage'].files[0];
 
 
@@ -66,6 +66,7 @@ async function pageInit(){
 
             set(dataRef, {
                 key,
+                sku,
                 urlPath,
                 // storagePath,
                 car,
